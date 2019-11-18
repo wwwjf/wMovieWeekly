@@ -1,0 +1,31 @@
+{
+  "pages": [
+    "pages/weekly/weekly",
+    "pages/about/about",
+    "pages/index/index"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarTitleText": "周周看",
+    "navigationBarTextStyle": "white",
+    "navigationBarBackgroundColor": "#5288FF",
+    "enablePullDownRefresh": false
+  },
+  "tabBar": {
+    "list": [{
+      "pagePath": "pages/weekly/weekly",
+      "text": "每周推荐",
+      "iconPath": "/images/icons/weekly.png",
+      "selectedIconPath": "images/icons/weekly-selected.png"
+    },{
+      "pagePath":"pages/about/about",
+      "text":"关于",
+      "iconPath":"/images/icons/about.png",
+      "selectedIconPath":"images/icons/about-selected.png"
+    }],
+    "color": "#000",
+    "selectedColor": "#5288FF"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

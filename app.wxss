@@ -1,0 +1,49 @@
+/**app.wxss**/
+/* .container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 200rpx 0;
+  box-sizing: border-box;
+}  */
+.container{
+  background:"#eee";
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+/* 传统方式 */
+/* .container{
+  background-color: "#eee";
+  height: 100vh;
+  text-align: center;
+}
+
+text {
+  display: block;
+}
+
+image,text{
+  margin-bottom: 60px;
+} */
+
+.about-banner{
+  width: 375rpx;
+  height: 375rpx;
+  border-radius: 50%;
+}
+
+.nav-default{
+  color: blue;
+}
+
+/* 点击态样式放后面 */
+.nav-hover{
+  color: red;
+}
+

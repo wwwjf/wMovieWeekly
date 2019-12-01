@@ -1,0 +1,33 @@
+.movie-swiper {
+  height: 35vh; 
+}
+
+.movie-swiper-image{
+ display: block;
+ width: 100%;
+}
+.movie-card {
+  height: 100%;
+  width: 100%;
+  background: #eee;
+  margin: 0 20rpx;
+  position: relative;
+}
+
+.movie-list{
+  display: flex;
+  margin-top: 50rpx;
+  margin-left: 10rpx;
+}
+
+.movie-list-content{
+  display: flex;
+  flex-direction: column;
+  width:550rpx;
+}
+
+.movie-list-image{
+  width: 200rpx;
+  height: 200rpx;
+  margin-right: 10rpx;
+}

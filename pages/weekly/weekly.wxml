@@ -4,11 +4,12 @@
     <swiper-item wx:for='{{weeklyMovieList}}'>
       <view class="movie-card ">
         <image src="{{item.imagePath}}" class="movie-swiper-image"></image>
+        <text wx:if="{{index != weeklyMovieList.length-1}}" class="return-button" bindtap="f0">返回本周+{{count}}</text>
       </view>
     </swiper-item>
   </swiper>
   <view class="movie-list" wx:for="{{weeklyMovieList}}" >
-    <image  class="movie-list-image" src="{{item.imagePath}}" ></image>
+    <image  class="movie-list-image" src="{{item.imagePath}}" data-movie-id="{{item.id}}" bindtap="f1" ></image>
     <view class="movie-list-content">
       <text>第{{index+1}}周：{{item.name}}</text>
       <text>点评：{{item.comment}}</text>

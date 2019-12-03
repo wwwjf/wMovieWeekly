@@ -6,11 +6,11 @@
     "pages/detail/detail"
   ],
   "window": {
-    "backgroundTextStyle": "light",
+    "backgroundTextStyle": "dark",
     "navigationBarTitleText": "周周看",
     "navigationBarTextStyle": "white",
     "navigationBarBackgroundColor": "#5288FF",
-    "enablePullDownRefresh": false
+    "enablePullDownRefresh": true
   },
   "tabBar": {
     "list": [

@@ -15,17 +15,27 @@ Page({
     var mid = options.id
     wx.showNavigationBarLoading("loading")
     console.log("===onload:mid="+mid)
+    var app = getApp()
+    console.log(app.globalData.weeklyMovieList)
+    var length=app.globalData.weeklyMovieList.length
+    wx.showLoading({
+      title: String(mid),
+    })
     this.setData({
       mid:mid,
     })
+
     wx.request({
       url: 'https://u.nu/api.php?action=shorturl&format=json&url=https://www.baidu.com/&keyword=wjf',
       success:function(res){
         console.log(res)
+        wx.stopPullDownRefresh()
+        wx.setNavigationBarTitle({
+          title: mid,
+        })
       }
     })
   },
-
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
@@ -58,7 +68,9 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-
+    setTimeout(function(){
+      wx.stopPullDownRefresh()
+    },1500)
   },
 
   /**

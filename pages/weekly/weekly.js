@@ -12,21 +12,21 @@ Page({
     },
     weeklyMovieList: [
       {
-        id:77,
+        id: 1292722,
         name: "《泰坦尼克号》",
         comment: "失去的才是永恒的",
         imagePath: "/images/titanic.jpg",
         isHighlyRecommended: false,
       },
       {
-        id: 88,
+        id: 1295644,
         name: "《这个杀手不太冷》",
         comment: "小萝莉与怪蜀黍纯真灿烂的爱情故事",
         imagePath: "/images/leon.jpg",
         isHighlyRecommended: false,
       },
       {
-        id: 99,
+        id: 1291841,
         name: "《教父》",
         comment: "最精彩的剧本，最真实的黑帮电影。",
         imagePath: "/images/jf.jpg",
@@ -44,6 +44,9 @@ Page({
     this.setData({
       currentIndex:this.data.weeklyMovieList.length-1,
     })
+    var app = getApp()
+    console.log("--------global---" + app.globalData.wechatName)
+    app.globalData.weeklyMovieList = this.data.weeklyMovieList
   },
 
   f0:function(event){

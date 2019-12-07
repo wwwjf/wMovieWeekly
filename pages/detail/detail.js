@@ -13,16 +13,23 @@ Page({
    */
   onLoad: function (options) {
     var mid = options.id
+    var position = options.position
     wx.showNavigationBarLoading("loading")
-    console.log("===onload:mid="+mid)
+    console.log("===onload:mid="+mid+",position="+position)
     var app = getApp()
     console.log(app.globalData.weeklyMovieList)
     var length=app.globalData.weeklyMovieList.length
+    var movie = app.globalData.weeklyMovieList[position]
     wx.showLoading({
       title: String(mid),
+      mask:true
     })
+    setTimeout(() => {
+      wx.hideLoading();
+    }, 3000);
     this.setData({
       mid:mid,
+      movie:movie,
     })
 
     wx.request({
@@ -84,6 +91,8 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-
+    return{
+      title:"向你推荐"+this.data.movie.name
+    }
   }
 })

@@ -1,6 +1,6 @@
 <view>
   <swiper class="movie-swiper" indicator-dots='{{true}}'
-  current='{{currentIndex}}'>
+  current='{{currentIndex}}' autoplay="{{true}}" interval="2000" circular="{{true}}">
     <swiper-item wx:for='{{weeklyMovieList}}'>
       <view class="movie-card ">
         <image src="{{item.imagePath}}" class="movie-swiper-image"></image>
@@ -9,7 +9,8 @@
     </swiper-item>
   </swiper>
   <view class="movie-list" wx:for="{{weeklyMovieList}}" >
-    <image  class="movie-list-image" src="{{item.imagePath}}" data-movie-id="{{item.id}}" bindtap="f1" ></image>
+    <image  class="movie-list-image" src="{{item.imagePath}}" data-movie-id="{{item.id}}"
+    data-position="{{item.position}}" bindtap="f1" ></image>
     <view class="movie-list-content">
       <text>第{{index+1}}周：{{item.name}}</text>
       <text>点评：{{item.comment}}</text>

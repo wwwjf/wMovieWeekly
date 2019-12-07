@@ -15,6 +15,7 @@ Page({
         id: 1292722,
         name: "《泰坦尼克号》",
         comment: "失去的才是永恒的",
+        position:"0",
         imagePath: "/images/titanic.jpg",
         isHighlyRecommended: false,
       },
@@ -22,6 +23,7 @@ Page({
         id: 1295644,
         name: "《这个杀手不太冷》",
         comment: "小萝莉与怪蜀黍纯真灿烂的爱情故事",
+        position:"1",
         imagePath: "/images/leon.jpg",
         isHighlyRecommended: false,
       },
@@ -29,6 +31,7 @@ Page({
         id: 1291841,
         name: "《教父》",
         comment: "最精彩的剧本，最真实的黑帮电影。",
+        position:"2",
         imagePath: "/images/jf.jpg",
         isHighlyRecommended: true,
       }
@@ -47,6 +50,13 @@ Page({
     var app = getApp()
     console.log("--------global---" + app.globalData.wechatName)
     app.globalData.weeklyMovieList = this.data.weeklyMovieList
+    wx.showLoading({
+      title: "加载中...",
+      mask:true
+    })
+    setTimeout(() => {
+      wx.hideLoading();
+    }, 3000);
   },
 
   f0:function(event){
@@ -61,9 +71,10 @@ Page({
 
   f1:function(event){
     var mid = event.currentTarget.dataset.movieId
-    console.log("----movieId:"+mid)
+    var position = event.currentTarget.dataset.position
+    console.log("----mid"+mid+",position:"+position)
     wx.navigateTo({
-      url: '/pages/detail/detail?id='+mid
+      url: '/pages/detail/detail?id='+mid+'&position='+position
       })
   },
 
